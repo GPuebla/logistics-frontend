@@ -5,9 +5,21 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  
+  const [indexDay, setindexDay] = useState(0);
 
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  
   return (
     <>
+      <div>
+        <h2>Today is {days[indexDay]}</h2>
+        <button onClick = {() => setindexDay(indexDay +1)}>
+          Next day
+        </button>
+      </div>
+
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
