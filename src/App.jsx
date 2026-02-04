@@ -15,7 +15,7 @@ function App() {
     <>
       <div>
         <h2>Today is {days[indexDay]}</h2>
-        <button onClick = {() => setindexDay(indexDay +1)}>
+        <button onClick={() => setindexDay((indexDay - 1 + days.length) % days.length)}>
           Next day
         </button>
       </div>
