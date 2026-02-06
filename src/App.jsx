@@ -10,6 +10,7 @@ function App() {
       <Route path="/bookings/:id" element={<BookingDetail />} />
     </Routes>
   );
+
 }
 
 export default App;
