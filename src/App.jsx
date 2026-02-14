@@ -1,16 +1,7 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-import BookingsList from "./pages/BookingsList";
-import BookingDetail from "./pages/BookingDetail";
+import { AppRouter } from "../src/routes/AppRouter.jsx";
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/bookings" />} />
-      <Route path="/bookings" element={<BookingsList />} />
-      <Route path="/bookings/:id" element={<BookingDetail />} />
-    </Routes>
-  );
-
+  return <AppRouter />;
 }
 
 export default App;

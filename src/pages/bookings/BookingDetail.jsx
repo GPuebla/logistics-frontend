@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getBookingById } from "../api/bookings";
+import { getBookingById } from "../../api/bookings";
 
 function BookingDetail() {
   const { id } = useParams();

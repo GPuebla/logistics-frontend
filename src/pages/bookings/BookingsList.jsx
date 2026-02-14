@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getBookings } from "../api/bookings";
+import { getBookings } from "../../api/bookings";
 import { Link } from "react-router-dom";
 
 
@@ -15,6 +15,7 @@ function BookingsList() {
   }, []);
 
   if (loading) return <p>Cargando bookings...</p>;
+
 
   return (
   <div className="page">
