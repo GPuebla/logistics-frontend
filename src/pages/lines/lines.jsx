@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getLines, createLine, deleteLine } from "../../api/lines";
+import { getLines, createLine, deleteLine, editLine } from "../../api/lines";
 
 function Lines() {
   const [lines, setLines] = useState([]);
@@ -19,6 +19,11 @@ function Lines() {
     await createLine({ name: newLine });
     setNewLine("");
     loadLines();
+  };
+
+   const handleEdit = async (id, data) => {
+      await editLine(id, data);
+      loadLines();
   };
 
   const handleDelete = async (id) => {
@@ -54,6 +59,11 @@ function Lines() {
               <td>
                 <button onClick={() => handleDelete(line._id)}>
                   Delete
+                </button>
+              </td>
+              <td>
+                <button onClick={() => handleEdit(line._id, { name: line.name })}>
+                  Edit
                 </button>
               </td>
             </tr>

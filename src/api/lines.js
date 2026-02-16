@@ -17,6 +17,17 @@ export const createLine = async (line) => {
   return res.json();
 };
 
+export const editLine = async (id,line) => {
+  const res = await fetch(`${API_URL}/lines${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(line),
+  });
+
+  if (!res.ok) throw new Error("Error editing line");
+  return res.json();
+};
+
 export const deleteLine = async (id) => {
   const res = await fetch(`${API_URL}/lines/${id}`, {
     method: "DELETE",
